@@ -1,11 +1,15 @@
 const http = require('http');
 const fs = require('fs');
+const cors = require('cors');
 const figlet = require('figlet');
 const path = require('path');
 let products = require('./products');
 let PORT = process.env.PORT || 8000
 const express = require('express');
 const app = express();
+
+
+app.use(cors)
 
 app.get('/', (req, res) => {
     let message = {
